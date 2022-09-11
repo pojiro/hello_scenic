@@ -37,6 +37,7 @@ defmodule HelloScenic.MixProject do
       {:toolshed, "~> 0.2.26"},
       {:scenic, "~> 0.11.0"},
       {:scenic_driver_local, "~> 0.11.0"},
+      {:scenic_clock, "~> 0.11.0"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.13.0", targets: @all_targets},
