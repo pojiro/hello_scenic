@@ -11,11 +11,16 @@ defmodule HelloScenic.Application do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: HelloScenic.Supervisor]
 
+    # start the application with the configured viewport
+    viewport_config = Application.get_env(:hello_scenic, :viewport)
+
     children =
       [
         # Children for all targets
         # Starts a worker by calling: HelloScenic.Worker.start_link(arg)
         # {HelloScenic.Worker, arg},
+        {Scenic, [viewport_config]},
+        HelloScenic.PubSub.Supervisor
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)

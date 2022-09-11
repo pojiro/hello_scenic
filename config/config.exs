@@ -26,6 +26,8 @@ config :nerves, source_date_epoch: "1662860845"
 
 config :logger, backends: [RingLogger]
 
+config :scenic, :assets, module: HelloScenic.Assets
+
 if Mix.target() == :host do
   import_config "host.exs"
 else
