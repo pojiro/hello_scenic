@@ -23,7 +23,7 @@ defmodule HelloScenic.MixProject do
   def application do
     [
       mod: {HelloScenic.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :scenic]
     ]
   end
 
@@ -35,6 +35,8 @@ defmodule HelloScenic.MixProject do
       {:shoehorn, "~> 0.9.1"},
       {:ring_logger, "~> 0.8.5"},
       {:toolshed, "~> 0.2.26"},
+      {:scenic, "~> 0.11.0"},
+      {:scenic_driver_local, "~> 0.11.0"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.13.0", targets: @all_targets},
