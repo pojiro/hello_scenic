@@ -38,6 +38,7 @@ defmodule HelloScenic.MixProject do
       {:scenic, "~> 0.11.0"},
       {:scenic_driver_local, "~> 0.11.0"},
       {:scenic_clock, "~> 0.11.0"},
+      {:circuits_i2c, "~> 1.0"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.13.0", targets: @all_targets},
