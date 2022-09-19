@@ -11,7 +11,8 @@ defmodule HelloScenic.PubSub.Supervisor do
   def init(:ok) do
     [
       # add your data publishers here
-      HelloScenic.PubSub.Temperature
+      HelloScenic.PubSub.Temperature,
+      HelloScenic.PubSub.Aht20
     ]
     |> Supervisor.init(strategy: :one_for_one)
   end

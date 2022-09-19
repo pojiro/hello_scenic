@@ -54,6 +54,7 @@ defmodule HelloScenic.Component.Nav do
       |> text("Scene:", translate: {15, 38}, align: :right, fill: text)
       |> dropdown(
         {[
+           {"MySensor (spec)", HelloScenic.Scene.MySensorSpec},
            {"Sensor", HelloScenic.Scene.Sensor},
            {"Sensor (spec)", HelloScenic.Scene.SensorSpec},
            {"Primitives", HelloScenic.Scene.Primitives},

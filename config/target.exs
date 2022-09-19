@@ -92,7 +92,7 @@ config :mdns_lite,
 config :hello_scenic, :viewport,
   size: {800, 600},
   theme: :dark,
-  default_scene: HelloScenic.Scene.Sensor,
+  default_scene: HelloScenic.Scene.MySensorSpec,
   drivers: [
     [
       module: Scenic.Driver.Local,
