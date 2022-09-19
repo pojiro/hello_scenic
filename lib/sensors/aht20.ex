@@ -2,16 +2,16 @@ defmodule HelloScenic.Sensors.Aht20 do
   @moduledoc """
   https://wiki.seeedstudio.com/Grove-AHT20-I2C-Industrial-Grade-Temperature&Humidity-Sensor/
   """
+  @behaviour HelloScenic.Sensors.Aht20Behaviour
 
   require Logger
-
-  use Bitwise
 
   alias Circuits.I2C
 
   @address 0x38
 
-  @spec read(bus_name :: String.t()) :: {:ok, temperature :: float()} | {:error, term()}
+  @spec read(bus_name :: String.t()) ::
+          {:ok, {temperature :: float(), humidity :: float()}} | {:error, term()}
   def read(bus_name) when bus_name in ["i2c-1"] do
     {:ok, bus_ref} = I2C.open(bus_name)
 

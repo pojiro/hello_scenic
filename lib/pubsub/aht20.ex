@@ -17,9 +17,7 @@ defmodule HelloScenic.PubSub.Aht20 do
   end
 
   def handle_info(:measure, state) do
-    # TODO implement behaviour
-    # {:ok, {_t, _h} = tuple} = HelloScenic.Sensors.Aht20.read("i2c-1")
-    {:ok, {_t, _h} = tuple} = {:ok, {20.0, 50.0}}
+    {:ok, {_t, _h} = tuple} = HelloScenic.Sensors.Aht20Behaviour.module().read("i2c-1")
 
     PubSub.publish(:aht20, tuple)
 
